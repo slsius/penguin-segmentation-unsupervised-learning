@@ -1,12 +1,12 @@
-# Unsupervised Clustering Case Study – Penguin Species Segmentation
+# Unsupervised Clustering Case Study – Penguin Segmentation
 
 ## 📌 Project Overview
 
-This project applies unsupervised machine learning techniques to segment penguin observations into distinct groups based on physical characteristics.
+This project applies unsupervised machine learning techniques to segment penguin observations into natural groupings based on physical characteristics.
 
-The objective was to identify natural clusters within the dataset and determine whether clustering methods could meaningfully separate species without labelled data.
+The objective was to identify underlying structure within the dataset and determine the optimal number of clusters using objective evaluation methods.
 
-This project demonstrates structured data preprocessing, exploratory analysis, clustering model implementation, and evaluation.
+This case study demonstrates structured data preprocessing, exploratory analysis, model selection, clustering implementation, and analytical interpretation.
 
 ---
 
@@ -33,45 +33,43 @@ Species labels were excluded during modelling to simulate a real-world unsupervi
 - Removed missing or inconsistent records
 - Encoded categorical variable (`sex`)
 - Standardised numerical features using `StandardScaler`
-- Checked feature distributions and correlations
+- Verified feature distributions and relationships
 
 ---
 
 ### 2️⃣ Exploratory Data Analysis (EDA)
 
 - Visualised feature distributions
-- Analysed relationships between culmen dimensions and body mass
-- Assessed separability of potential clusters
+- Analysed correlations between physical attributes
+- Assessed separability across dimensions
 
 ---
 
-### 3️⃣ Model Selection
+### 3️⃣ Cluster Selection
 
-Applied **K-Means Clustering**:
+The optimal number of clusters was determined using:
 
-- Tested multiple values of K
-- Used the **Elbow Method** to determine optimal cluster number
-- Evaluated inertia score for cluster compactness
+- **Elbow Method** (inertia analysis)
+- **Silhouette Score** (cluster separation quality)
+
+The value of **K was selected based on the strongest silhouette score and visual elbow inflection point**, ensuring a data-driven decision rather than assumption-based selection.
 
 ---
 
-### 4️⃣ Model Evaluation
+### 4️⃣ Clustering Implementation
 
-- Compared clustering output to known species (for validation only)
-- Analysed centroid characteristics
-- Visualised cluster separation
-- Interpreted feature importance across clusters
+- Applied K-Means clustering using the selected K value
+- Evaluated cluster compactness and separation
+- Visualised clusters using PCA dimensionality reduction
 
 ---
 
 ## 🔎 Key Findings
 
-- Optimal cluster number identified: **K = 3**
-- Body mass and flipper length were primary differentiators
-- Clear separation observed between Gentoo and Adelie clusters
-- Chinstrap showed partial overlap due to feature similarity
-
-This demonstrates how unsupervised learning can uncover natural segmentation patterns in structured datasets.
+- Distinct clusters emerged primarily differentiated by **body mass** and **flipper length**
+- Silhouette analysis confirmed meaningful separation between clusters
+- PCA visualisation demonstrated clear segmentation patterns
+- Results illustrate how unsupervised learning can identify natural groupings within structured datasets
 
 ---
 
@@ -80,10 +78,11 @@ This demonstrates how unsupervised learning can uncover natural segmentation pat
 - Python  
 - Pandas  
 - NumPy  
-- Matplotlib / Seaborn  
+- Matplotlib  
 - Scikit-learn  
 - StandardScaler  
 - KMeans  
+- PCA  
 
 ---
 
@@ -96,12 +95,11 @@ This demonstrates how unsupervised learning can uncover natural segmentation pat
 
 └── README.md
 
-
 ---
 
 ## 💼 Business Relevance
 
-Clustering techniques are widely used in commercial and enterprise environments for:
+Unsupervised clustering techniques are widely used in commercial and enterprise environments for:
 
 - Customer segmentation  
 - Risk categorisation  
@@ -109,16 +107,21 @@ Clustering techniques are widely used in commercial and enterprise environments 
 - Behavioural profiling  
 - Market analysis  
 
-This project demonstrates foundational capability in applying structured unsupervised learning techniques to real-world analytical problems.
+This project demonstrates the ability to:
+
+- Prepare and transform structured datasets  
+- Select models using objective evaluation techniques  
+- Interpret cluster outputs analytically  
+- Document methodology in a reproducible format  
 
 ---
 
 ## 🚀 Skills Demonstrated
 
 - Data cleaning & preprocessing  
-- Feature scaling & transformation  
+- Feature scaling & encoding  
 - Unsupervised machine learning  
-- Model evaluation techniques  
-- Analytical interpretation of results  
-- Structured documentation of analytical workflow  
-
+- Model evaluation (Elbow & Silhouette)  
+- Dimensionality reduction (PCA)  
+- Analytical interpretation  
+- Structured documentation  
